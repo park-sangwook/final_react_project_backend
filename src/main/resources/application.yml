@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: react_final_project
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enable: true
+  web:
+    resources:
+      static-locations: file:/D:/review/,classpath:/static/
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        #dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+        highlight_sql: true
+    defer-datasource-initialization: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        orm:
+          jdbc:
+            bind: trace
+
