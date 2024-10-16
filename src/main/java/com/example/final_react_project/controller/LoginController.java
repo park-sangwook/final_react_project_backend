@@ -19,12 +19,14 @@ public class LoginController {
     @ResponseBody
     public LoginDTO user(@AuthenticationPrincipal PrincipalDetails principalDetails){
         LoginDTO dto = principalDetails.getDto();
+        System.out.println("user-info : "+dto);
         return new LoginDTO(dto.getId(),null,dto.getRole(),dto.getProvider());
     }
 
     @GetMapping(value = "/test")
     @ResponseBody
-    public String test(){
+    public String test(@AuthenticationPrincipal PrincipalDetails principalDetails){
+        System.out.println("결과 : "+principalDetails.getDto());
         return "test";
     }
 }
