@@ -21,4 +21,18 @@ public class MenuService {
         return menuDAO.selectByIdx(idx);
     }
 
+    @Transactional
+    public void insert(MenuDTO dto){
+        menuDAO.insert(dto);
+    }
+
+    @Transactional
+    public void update(MenuDTO dto){
+        menuDAO.update(dto);
+    }
+
+    @Transactional
+    public void delete(int idx){
+        menuDAO.delete(idx);
+    }
 }

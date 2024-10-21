@@ -9,4 +9,15 @@
         select * from menu where company_idx=#{idx}
     </select>
 
+    <update id="update" parameterType="MenuDTO">
+        update menu set price=#{price} where idx=#{idx}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        delete from menu where idx=#{idx}
+    </delete>
+
+    <insert id="insert" parameterType="MenuDTO">
+        insert into menu values(0,#{name},#{price},#{image},#{company_idx})
+    </insert>
 </mapper>

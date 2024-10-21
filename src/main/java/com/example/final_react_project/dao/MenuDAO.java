@@ -9,4 +9,7 @@ import java.util.List;
 public interface MenuDAO {
     MenuDTO selectByIdx(int idx);
     List<MenuDTO> selectAll(int idx);
+    void insert(MenuDTO dto);
+    void update(MenuDTO dto);
+    void delete(int idx);
 }
